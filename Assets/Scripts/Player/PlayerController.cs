@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
     
+    [SerializeField] private PlayerTurn playerTurn;
 
 
     void Start()
@@ -25,6 +26,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(playerTurn != PlayerTurnController.instance.getCurrentTurn()){
+            rb.velocity = new Vector2(0,0);
+            return;
+        }
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 
         moveInput = Input.GetAxis("Horizontal");
@@ -42,6 +47,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     { 
+        
+        if(playerTurn != PlayerTurnController.instance.getCurrentTurn()){
+            rb.velocity = new Vector2(0,0);
+            return;
+        }
        
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
