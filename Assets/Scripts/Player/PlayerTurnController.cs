@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 public class PlayerTurnController : MonoBehaviour
 {
     //create instance
     public static PlayerTurnController instance;
     public PlayerTurn currentTurn;
-    public GameObject player1_vcam,player2_vcam;
+    public CinemachineVirtualCamera player1_vcam,player2_vcam;
 
     private void Awake() {
         if (instance == null) {
@@ -32,8 +32,8 @@ public class PlayerTurnController : MonoBehaviour
     }
 
     private void setPlayer1CameraActive(bool active) {
-        player1_vcam.SetActive(active);
-        player2_vcam.SetActive(!active);
+        player1_vcam.gameObject.SetActive(active);
+        player2_vcam.gameObject.SetActive(!active);
     }
 
     private void Update() {
@@ -41,6 +41,15 @@ public class PlayerTurnController : MonoBehaviour
             switchPlayerTurn();
         }
     }
+
+    public void setPlayer1VCam(Transform followTarget) {
+        player1_vcam.Follow = followTarget;
+    }
+
+    public void setPlayer2VCam(Transform followTarget) {
+        player2_vcam.Follow = followTarget;
+    }
+    
 }
 
 public enum PlayerTurn

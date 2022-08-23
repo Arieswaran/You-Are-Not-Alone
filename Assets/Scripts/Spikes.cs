@@ -9,7 +9,7 @@ public class Spikes : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-           SceneManager.LoadScene("Your not alone");
+           GameManager.instance.RestartLevel();
         }
     }
 }

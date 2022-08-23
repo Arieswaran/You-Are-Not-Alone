@@ -26,11 +26,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         if(playerTurn != PlayerTurnController.instance.getCurrentTurn()){
-            rb.velocity = new Vector2(0,0);
             return;
         }
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity =new Vector2(moveInput * speed, rb.velocity.y);
@@ -49,7 +48,7 @@ public class PlayerController : MonoBehaviour
     { 
         
         if(playerTurn != PlayerTurnController.instance.getCurrentTurn()){
-            rb.velocity = new Vector2(0,0);
+            rb.velocity = Vector2.down * jumpForce; // made a quick fix for player still floating or moving while switching the player
             return;
         }
        
@@ -66,5 +65,13 @@ public class PlayerController : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+
+    public PlayerTurn GetPlayerTurn(){
+        return playerTurn;
+    }
+
+    public void SetPlayerTurn(PlayerTurn turn){
+        playerTurn = turn;
     }
 }
