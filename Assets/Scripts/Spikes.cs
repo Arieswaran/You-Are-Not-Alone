@@ -9,7 +9,8 @@ public class Spikes : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-           GameManager.instance.RestartLevel();
+                       GameManager.instance.RestartLevel();
+
         }
     }
 }

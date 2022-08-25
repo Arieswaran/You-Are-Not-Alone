@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyHolder : MonoBehaviour
 {
-   private List<Key.KeyType> keyList;
+   public List<Key.KeyType> keyList;
 
    public void Awake()
    {
@@ -29,11 +29,24 @@ public class KeyHolder : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D Collision)
    {
-      Key key = GetComponent<Collider>().GetComponent<Key>();
+      Key key = GetComponent<Collider2D>().GetComponent<Key>();
       if (key != null)
       {
         AddKey(key.GetKeyType());
         Destroy(key.gameObject);
       }
+
+       KeyDoor keyDoor =GetComponent<Collider2D>().GetComponent<KeyDoor>();
+       if (keyDoor != null)
+       {
+         if (ContainsKey(keyDoor.GetKeyType()))
+         {
+            //holding key to open door
+            RemoveKey(keyDoor.GetKeyType());
+            keyDoor.OpenDoor();
+         } 
+       }
    }
+
+  
 }
