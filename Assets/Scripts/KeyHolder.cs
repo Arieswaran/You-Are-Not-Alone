@@ -29,14 +29,14 @@ public class KeyHolder : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D Collision)
    {
-      Key key = GetComponent<Collider2D>().GetComponent<Key>();
+      Key key = Collision.GetComponent<Key>();
       if (key != null)
       {
         AddKey(key.GetKeyType());
         Destroy(key.gameObject);
       }
 
-       KeyDoor keyDoor =GetComponent<Collider2D>().GetComponent<KeyDoor>();
+       KeyDoor keyDoor = Collision.GetComponent<KeyDoor>();
        if (keyDoor != null)
        {
          if (ContainsKey(keyDoor.GetKeyType()))

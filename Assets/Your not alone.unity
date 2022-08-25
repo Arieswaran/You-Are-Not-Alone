@@ -642,7 +642,6 @@ GameObject:
   - component: {fileID: 679138834}
   - component: {fileID: 679138833}
   - component: {fileID: 679138836}
-  - component: {fileID: 679138837}
   m_Layer: 0
   m_Name: Key item
   m_TagString: Untagged
@@ -756,19 +755,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyType: 0
---- !u!114 &679138837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679138832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f8e9493627eba46b904cec73077f70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyList: 
 --- !u!1 &710705203
 GameObject:
   m_ObjectHideFlags: 3
@@ -1736,7 +1722,6 @@ GameObject:
   - component: {fileID: 1563401218}
   - component: {fileID: 1563401220}
   - component: {fileID: 1563401219}
-  - component: {fileID: 1563401221}
   m_Layer: 0
   m_Name: Door red
   m_TagString: Untagged
@@ -1800,19 +1785,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2193718, y: 3.6193914}
   m_EdgeRadius: 0
---- !u!114 &1563401221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563401217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f8e9493627eba46b904cec73077f70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyList: 
 --- !u!1 &1592004372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,7 +1942,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9037182, y: 1}
+    m_SensorSize: {x: 1.7784201, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2584,7 +2556,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9037182, y: 1}
+    m_SensorSize: {x: 1.7784201, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
