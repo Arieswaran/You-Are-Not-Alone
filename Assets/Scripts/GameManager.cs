@@ -49,4 +49,18 @@ public class GameManager : MonoBehaviour
         StartLevel();
     }
 
+    public int GetPlayerLevel(){
+        return PlayerPrefs.GetInt("level",1);
+    }
+
+    public void SetPlayerLevel(int level){
+        PlayerPrefs.SetInt("level",level);
+    }
+
+    public void IncrementPlayerLevel(){
+        SetPlayerLevel(GetPlayerLevel()+1);
+    }
+
+    
+
 }
