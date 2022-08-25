@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyHolder : MonoBehaviour
 {
-   private List<Key.KeyType> KeyList;
+   private List<Key.KeyType> keyList;
 
    public void Awake()
    {
