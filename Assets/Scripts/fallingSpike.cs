@@ -18,8 +18,8 @@ public class fallingSpike : MonoBehaviour
         
     }
 
-    public static void gravityOn()
+    public void gravityOn()
     {
-       // rb.simulated = true;
+      rb.simulated = true;
     }
 }
