@@ -2063,8 +2063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499e8f151fc21d141910c41b2e2720fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1_controller: {fileID: 0}
-  player2_controller: {fileID: 0}
+  player1_controller: {fileID: 1249329544873143954}
+  player2_controller: {fileID: 1249329545748931669}
   close_distance_to_win: 0.5
 --- !u!1001 &2202308644138682232
 PrefabInstance:
