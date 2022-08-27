@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTurnController: {fileID: 1356560249}
-  levelPrefab: {fileID: 3983366284676418841, guid: 727774e83860ec24594a048bd71b0d9f, type: 3}
+  levelPrefab: {fileID: 3598593789960882627, guid: 9e82a0cf3e52fc042ade57b3cc49eea5, type: 3}
   levelParent: {fileID: 1000573451}
 --- !u!4 &1293447401
 Transform:
@@ -470,7 +470,11 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
+<<<<<<< Updated upstream
     m_SensorSize: {x: 1.7784201, y: 1}
+=======
+    m_SensorSize: {x: 0.6288897, y: 1}
+>>>>>>> Stashed changes
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -694,7 +698,11 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
+<<<<<<< Updated upstream
     m_SensorSize: {x: 1.7784201, y: 1}
+=======
+    m_SensorSize: {x: 0.6288897, y: 1}
+>>>>>>> Stashed changes
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
