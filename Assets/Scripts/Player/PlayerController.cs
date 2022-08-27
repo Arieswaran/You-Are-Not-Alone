@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
     [SerializeField] private float moveInput;
+
+    [SerializeField] public Animator animator;
+   
+
     private bool facingRight = true;
     private Rigidbody2D rb;
   
@@ -46,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     { 
+         animator.SetFloat("speed", Mathf.Abs(speed));
         
         if(playerTurn != PlayerTurnController.instance.getCurrentTurn()){
             rb.velocity = Vector2.down * jumpForce; // made a quick fix for player still floating or moving while switching the player
@@ -55,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
             rb.velocity = Vector2.up * jumpForce;
+            animator.SetBool("isJumping", true);
         }
   
     }
@@ -73,5 +80,15 @@ public class PlayerController : MonoBehaviour
 
     public void SetPlayerTurn(PlayerTurn turn){
         playerTurn = turn;
+    }
+     [Header("Events")]
+	[Space]
+
+	public UnityEvent OnLandEvent;
+
+
+    public void OnLanding()
+    {
+     animator.SetBool("isJumping",false);
     }
 }
