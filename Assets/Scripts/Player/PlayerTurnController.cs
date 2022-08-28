@@ -31,7 +31,7 @@ public class PlayerTurnController : MonoBehaviour
         }
     }
 
-    private void setPlayer1CameraActive(bool active) {
+    public void setPlayer1CameraActive(bool active) {
         player1_vcam.gameObject.SetActive(active);
         player2_vcam.gameObject.SetActive(!active);
     }

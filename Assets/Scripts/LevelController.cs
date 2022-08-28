@@ -7,15 +7,24 @@ public class LevelController : MonoBehaviour
     [SerializeField] private PlayerController player1_controller,player2_controller; //TODO : Instantiate player prefabs and assign to these variables
     [SerializeField] private float close_distance_to_win = 0.5f;
 
+    private bool user_won = false;
+
     private void Start() {
         player1_controller.SetPlayerTurn(PlayerTurn.PLAYER_1);
         player2_controller.SetPlayerTurn(PlayerTurn.PLAYER_2);
     }
 
     private void Update() {
-        if(getDistanceBetweenPlayers() < close_distance_to_win){
+        if(getDistanceBetweenPlayers() < close_distance_to_win && !user_won){
             Debug.Log("User wins");
+            user_won = true;
+            OnUserWon();
         }
+    }
+
+    private void OnUserWon(){
+        GameManager.instance.IncrementPlayerLevel();
+        GameManager.instance.RestartLevel();
     }
 
     public void renderLevel(){
