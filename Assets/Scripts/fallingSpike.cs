@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class fallingSpike : MonoBehaviour
 {
-    Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-      rb.GetComponent<Rigidbody2D>();    
+      rb = transform.GetComponent<Rigidbody2D>();    
     }
 
     // Update is called once per frame

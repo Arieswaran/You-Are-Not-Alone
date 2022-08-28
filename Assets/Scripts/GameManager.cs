@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("More than one GameManager in scene");
         }
+        PlayerPrefs.DeleteAll();
+
     }
 
     // private void Start()

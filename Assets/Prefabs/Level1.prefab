@@ -1254,8 +1254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499e8f151fc21d141910c41b2e2720fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1_controller: {fileID: 0}
-  player2_controller: {fileID: 0}
+  player1_controller: {fileID: 4944085904821972126}
+  player2_controller: {fileID: 6999319675593767982}
   close_distance_to_win: 0.5
 --- !u!1 &4408992347742034720
 GameObject:
