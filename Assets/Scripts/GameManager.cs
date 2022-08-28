@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel(){
         int level = GetPlayerLevel();
-        if(level > levelPrefabs.Count){
+        if(level >= levelPrefabs.Count){
             Debug.LogError("No level prefab found for level " + level);
             level = levelPrefabs.Count - 1;
         }
