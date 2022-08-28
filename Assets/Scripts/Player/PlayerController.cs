@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     { 
-         animator.SetFloat("speed", Mathf.Abs(speed));
+         animator.SetFloat("speed", Mathf.Abs(moveInput));
         
         if(playerTurn != PlayerTurnController.instance.getCurrentTurn()){
             rb.velocity = Vector2.down * jumpForce; // made a quick fix for player still floating or moving while switching the player
