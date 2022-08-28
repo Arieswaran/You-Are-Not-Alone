@@ -8899,7 +8899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1_controller: {fileID: 4831764818593379797}
   player2_controller: {fileID: 4831764819460718354}
-  close_distance_to_win: 0.5
+  close_distance_to_win: 2
 --- !u!1 &7529710119848676826
 GameObject:
   m_ObjectHideFlags: 0

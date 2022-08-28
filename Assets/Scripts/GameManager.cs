@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> levelPrefabs; //list of level prefabs to create levels
     [SerializeField] private Transform levelParent; //parent transform for all levels
     [SerializeField] private GameObject StartMenu;
+    [SerializeField] private TextMeshProUGUI levelText;
 
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
         PlayerTurnController.instance.setPlayer2VCam(levelController.getPlayer2Transform());
         StartMenu.SetActive(false);
         PlayerTurnController.instance.setPlayer1CameraActive(true);
+        levelText.text = "Level " + (level + 1);
     }
 
     public void EndLevel(){
@@ -67,7 +70,7 @@ public class GameManager : MonoBehaviour
     }
 
     public int GetPlayerLevel(){
-        return PlayerPrefs.GetInt("level",1);
+        return PlayerPrefs.GetInt("level",0);
     }
 
     public void SetPlayerLevel(int level){
